@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("My blog will one day live...")
+def home(request):
+    return HttpResponse("Home Page..")
+
+def blog(request):
+    return HttpResponse("Blog lives here")
