@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-</head>
-<body>
+{% extends 'base.html' %} {% load staticfiles %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class="jumbotron">
+    <div class="container" style="text-align:center;">
+        <object type="image/svg+xml" data="{% static 'media/me.svgz' %}"
+        style="width:30%;"></object>
+         <h1>Luis Cazares</h1>
+    </div>
+</div>
+<div class="col-lg-10 offset-md-8">
+    <div class="col-lg-4 col-md-4">
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <h4>Currently learning</h4>
+            </div>
+            <div class="card-body">
+                <p>C++ / C#</p>
+                <p>Python</p>
+                <p>Go</p>
+                <p>HTML / JavaScript / CSS / SQL</p>
+                <p>Obj-C / Swift</p>
+                <p>Android Studio</p>
+                <p>Adobe Suite</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+  <script async type="text/javascript">
+    $('li').removeClass( 'active' )
+  </script>
+{% endblock %}
 
-</body>
-</html>

@@ -1,0 +1,25 @@
+version: '3'
+
+volumes:
+  pgdata:
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    links:
+      - db
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASS: dbtesting
+    volumes:
+      - pgdata:/var/lib/postgresql/data
